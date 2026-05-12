@@ -159,18 +159,6 @@ streamlit run app.py
 
 ---
 
-## Future Improvements
-
-* Memory-enabled agents
-* Multi-source scraping
-* PDF export
-* Citation generation
-* Agent collaboration graphs
-* RAG integration
-* Streaming responses
-
----
-
 ## Deployment
 
 The application can be deployed using:
