@@ -10,3 +10,6 @@ requests
 python-dotenv
 lxml
 rich
+fastapi
+uvicorn
+sse-starlette
