@@ -1,19 +1,19 @@
-# Multi-Agent Research System
+# Deep Research AI
 
-A full-stack multi-agent AI research system that autonomously performs web searches, webpage scraping, and detailed report generation, complete with real-time feedback via a modern React frontend.
+An autonomous AI platform that analyzes the web to compile comprehensive research reports. 
 
-Built using **LangChain**, **Mistral AI**, **Tavily Search**, **FastAPI** on the backend, and **React + Vite** on the frontend.
+Built using **LangChain**, **Mistral AI**, **Tavily Search**, **FastAPI** with SQLite on the backend, and **React + Vite** for a modern, sleek frontend.
 
 ---
 
 ## 🌟 Features
 
 * **Multi-agent research pipeline**: Specialized agents for searching, reading, synthesizing, and critiquing.
-* **Real-time Streaming**: See the research progress in real-time on the frontend using Server-Sent Events (SSE).
-* **Tavily-powered web search**: Find recent and highly relevant information.
-* **Modern Web UI**: A sleek, premium dark-mode interface built with React and Vite.
-* **Automated report generation**: Synthesizes collected data into a structured Markdown report.
-* **AI critique system**: Automatically reviews generated reports to ensure quality.
+* **Real-time Streaming**: Watch the AI agents at work in real-time on the frontend using Server-Sent Events (SSE).
+* **Tavily-powered web search**: Scours the internet to find recent and highly relevant information on any topic.
+* **Persistent History & Database**: Automatically saves your generated reports to a local SQLite database (`reports.db`).
+* **Sleek UI & Collapsible Sidebar**: A premium dark-mode interface with a collapsible sidebar that allows you to search and load past conversations instantly.
+* **AI critique system**: Automatically reviews generated reports to ensure quality and depth.
 
 ---
 
@@ -34,7 +34,7 @@ Writer Chain (Synthesizes research into a report)
     ↓
 Critic Chain (Reviews and refines the report)
     ↓
-Final Research Output (Streamed to Frontend)
+Final Research Output (Saved to SQLite & Streamed to Frontend)
 ```
 
 ---
@@ -48,12 +48,13 @@ Final Research Output (Streamed to Frontend)
 * **Mistral AI** (LLM provider)
 * **Tavily API** (Search engine)
 * **BeautifulSoup** (Web scraping)
+* **SQLite** (Local Database for persisting reports)
 
 ### Frontend
 * **React 19**
 * **Vite** (Build tool)
 * **React Markdown** (Rendering output)
-* **Modern CSS** (Premium dark mode UI)
+* **Modern CSS** (Premium dark mode UI with glassmorphism)
 
 ---
 
@@ -64,6 +65,7 @@ Multi-Agent-System/
 │
 ├── backend/                  # Python FastAPI Backend
 │   ├── agents.py             # Agent definitions (Search, Reader)
+│   ├── database.py           # SQLite database schema and helper functions
 │   ├── pipeline.py           # The LangChain research pipeline
 │   ├── server.py             # FastAPI server and SSE endpoints
 │   └── tools.py              # Custom tools for agents
@@ -139,14 +141,8 @@ npm run dev
 
 ## 💡 Example Research Topics
 
-Try searching for these topics in the UI:
-* *Impact of AI on Healthcare*
-* *Future of Quantum Computing*
-* *State Space Models in AI*
-* *Recent breakthroughs in solid-state batteries*
-
----
-
-## 👤 Author
-
-Surya S
+Try asking the AI about these topics:
+* *The future of solid-state batteries in EVs*
+* *How do quantum computers break encryption?*
+* *Latest breakthroughs in fusion energy*
+* *State Space Models in modern AI*

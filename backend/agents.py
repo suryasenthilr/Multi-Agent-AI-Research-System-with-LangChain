@@ -3,7 +3,6 @@ from langchain_mistralai import ChatMistralAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from backend.tools import web_search,scrape_url
-import os
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -23,7 +22,7 @@ def build_reader_agent():
         tools = [scrape_url]
     )
 
-writer_prompt = ChatPromptTemplate([
+writer_prompt = ChatPromptTemplate.from_messages([
     ("system", "You are an expert research writer. Write clear, structured and insightful reports."),
     ("human", """Write a detailed research report on the topic below.
 

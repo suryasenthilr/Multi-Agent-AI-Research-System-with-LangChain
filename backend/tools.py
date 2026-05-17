@@ -3,7 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 from tavily import TavilyClient
 import os
-from rich import print
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -20,13 +19,6 @@ def web_search(query:str)->str:
         )
 
     return "\n---\n".join(out)
-
-
-from langchain.tools import tool
-import requests
-from bs4 import BeautifulSoup
-
-
 @tool
 def scrape_url(url: str) -> str:
     """
